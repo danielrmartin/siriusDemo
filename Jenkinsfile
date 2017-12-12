@@ -21,5 +21,24 @@ pipeline {
         sh 'ansible-cle <playbook>'
       }
     }
+    stage('UI TEST') {
+      parallel {
+        stage('UI TEST') {
+          steps {
+            sh 'hello'
+          }
+        }
+        stage('Firefox') {
+          steps {
+            sh 'echo foo'
+          }
+        }
+        stage('Chrome') {
+          steps {
+            sh 'ECHO CHROME'
+          }
+        }
+      }
+    }
   }
 }
