@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'larger'
-    }
-    
-  }
+  agent any
   stages {
     stage('checkout') {
       steps {
