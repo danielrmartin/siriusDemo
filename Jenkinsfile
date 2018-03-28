@@ -20,7 +20,7 @@ pipeline {
       parallel {
         stage('UI TEST') {
           steps {
-            sh 'hello'
+            sh 'echo hello'
           }
         }
         stage('Firefox') {
@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Chrome') {
           steps {
-            sh 'ECHO CHROME'
+            sh 'echoCHROME'
           }
         }
       }
