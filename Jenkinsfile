@@ -18,7 +18,7 @@ pipeline {
     }
     stage('UI TEST') {
       parallel {
-        stage('UI TEST') {
+        stage('IE') {
           steps {
             sh 'echo hello'
           }
