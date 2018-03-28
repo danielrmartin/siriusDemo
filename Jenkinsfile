@@ -13,7 +13,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'echo ansible-cle <playbook>'
+        sh 'echo ansible-cle playbook'
       }
     }
     stage('UI TEST') {
