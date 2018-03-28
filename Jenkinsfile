@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Chrome') {
           steps {
-            sh 'echoCHROME'
+            sh 'echo CHROME'
           }
         }
       }
