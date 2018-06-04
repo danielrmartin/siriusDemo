@@ -1,37 +1,21 @@
 pipeline {
   agent {
-    node {
-      label 'docker'
+    kubernetes {
+      //cloud 'kubernetes'
+      label 'mypod'
+      containerTemplate {
+        name 'maven'
+        image 'maven:3.3.9-jdk-8-alpine'
+        ttyEnabled true
+        command 'cat'
+      }
     }
-    
   }
   stages {
-    stage('build') {
+    stage('Run maven') {
       steps {
-        sh 'echo mvn clean install'
-      }
-    }
-    stage('deploy') {
-      steps {
-        sh 'echo ansible-cle playbook'
-      }
-    }
-    stage('UI TEST') {
-      parallel {
-        stage('IE') {
-          steps {
-            sh 'echo hello'
-          }
-        }
-        stage('Firefox') {
-          steps {
-            sh 'echo foo'
-          }
-        }
-        stage('Chrome') {
-          steps {
-            sh 'echo CHROME'
-          }
+        container('maven') {
+          sh 'mvn -version'
         }
       }
     }
