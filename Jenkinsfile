@@ -28,6 +28,7 @@ pipeline {
                 }
                 else
                   sh "echo Not deploying"
+              }
             }
         }
     stage ('Deploy to QA'){
