@@ -43,7 +43,7 @@ pipeline {
     stage ('parent'){
      options {
     lock('myLock')
-  }//end log
+  }//end options
       stages {
     stage('first child') {
       steps{sleep 60}
@@ -51,6 +51,7 @@ pipeline {
     stage('second child') {
       steps { sleep 10}
     }//end second
-  }//end parent
+  }//end stages
+    }   //end parent
   }
 }
