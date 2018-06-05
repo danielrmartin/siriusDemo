@@ -19,6 +19,14 @@ pipeline {
           sh 'env'
         }
       }
-    }
+    }  
+     stage('Example Deploy') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
   }
 }
