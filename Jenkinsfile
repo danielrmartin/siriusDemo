@@ -32,5 +32,6 @@ pipeline {
       steps{
         echo 'deploying to qa'
       }
+    }
   }
 }
