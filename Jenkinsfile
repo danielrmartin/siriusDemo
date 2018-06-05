@@ -40,18 +40,5 @@ pipeline {
                 echo 'Deploying'
             }
     }
-    stage ('parent'){
-     options {
-    lock('myLock')
-  }//end options
-      stages {
-    stage('first child') {
-      steps{sleep 60}
-    }//end first
-    stage('second child') {
-      steps { sleep 10}
-    }//end second
-  }//end stages
-    }   //end parent
   }
 }
