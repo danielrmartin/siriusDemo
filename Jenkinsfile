@@ -28,5 +28,9 @@ pipeline {
                 echo 'Deploying'
             }
         }
+    stage ('Deploy to QA'){
+      steps{
+        echo 'deploying to qa'
+      }
   }
 }
