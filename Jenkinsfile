@@ -23,7 +23,7 @@ pipeline {
      stage('Example Deploy') {
             steps {
               script{
-                if (env.Branch=="Dev"){
+                if (env.Branch=="dev"){
                sh " echo Deploying"
                 }
                 else
