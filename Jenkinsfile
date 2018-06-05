@@ -12,12 +12,33 @@ pipeline {
     }
   }
   stages {
-    stage('Run maven') {
+    stage('Verify maven') {
       steps {
         container('maven') {
           sh 'mvn -version'
+          sh 'env'
         }
       }
+    }  
+     stage('Example Deploy') {
+            steps {
+              script{
+                if (env.BRANCH_NAME=="dev"){
+               sh " echo Deploying"
+                }
+                else
+                  sh "echo Not deploying"
+              }
+            }
+        }
+    stage ('Deploy to QA'){
+     when {
+                beforeAgent true
+                branch 'master'
+            }
+            steps {
+                echo 'Deploying'
+            }
     }
   }
 }
