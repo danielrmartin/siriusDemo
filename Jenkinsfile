@@ -23,7 +23,7 @@ pipeline {
      stage('Example Deploy') {
             steps {
               script{
-                if (branch=="dev"){
+                if (env.BRANCH_NAME=="dev"){
                sh " echo Deploying"
                 }
                 else
@@ -32,9 +32,13 @@ pipeline {
             }
         }
     stage ('Deploy to QA'){
-      steps{
-        echo 'deploying to qa'
-      }
+     when {
+                beforeAgent true
+                branch 'master'
+            }
+            steps {
+                echo 'Deploying'
+            }
     }
   }
 }
