@@ -19,6 +19,19 @@ pipeline {
           sh 'env'
         }
       }
+    }  
+     stage('Example Deploy') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    stage ('Deploy to QA'){
+      steps{
+        echo 'deploying to qa'
+      }
     }
   }
 }
