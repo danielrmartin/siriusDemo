@@ -16,6 +16,7 @@ pipeline {
       steps {
         container('maven') {
           sh 'mvn -version'
+          sh 'env'
         }
       }
     }
