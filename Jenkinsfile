@@ -21,11 +21,13 @@ pipeline {
       }
     }  
      stage('Example Deploy') {
-            when {
-                branch 'dev'
-            }
             steps {
-                echo 'Deploying'
+              script{
+                if (env.Branch=="Dev"){
+               sh " echo Deploying"
+                }
+                else
+                  sh "echo Not deploying"
             }
         }
     stage ('Deploy to QA'){
