@@ -16,7 +16,7 @@ pipeline {
       steps {
         container('maven') {
           final scmVars = checkout(scm)
-          sh "echo "scmVars: ${scmVars}"
+          sh "echo scmVars: ${scmVars}"
           sh 'mvn -version'
           sh 'env'
           sh "echo this is the url ${env.GIT_URL}"
