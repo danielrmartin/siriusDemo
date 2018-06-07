@@ -15,6 +15,7 @@ pipeline {
     stage('Verify maven') {
       steps {
         container('maven') {
+          checkout scm
           sh 'mvn -version'
           sh 'env'
           sh "echo this is the url ${env.GIT_URL}"
