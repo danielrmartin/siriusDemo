@@ -17,7 +17,7 @@ pipeline {
         container('maven') {
           sh 'mvn -version'
           sh 'env'
-          sh 'echo this is the url ${GIT_URL}'
+          sh 'echo this is the url ${env.GIT_URL}'
         }
       }
     }  
