@@ -17,7 +17,7 @@ pipeline {
         container('maven') {
           script{
           final scmVars = checkout(scm)
-            sh "echo scmVars: ${scmVars}"
+            sh "echo these are our SCM variables scmVars: ${scmVars}"
           }
           sh 'mvn -version'
           sh 'env'
