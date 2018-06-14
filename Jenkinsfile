@@ -1,4 +1,4 @@
-import com.acme.Build
+@Library('build') import com.acme.Build
 def build=new Build(this)
 pipeline {
   agent {
