@@ -17,7 +17,7 @@ pipeline {
       steps {
         container('maven') {
           sh 'mvn -version'
-          script{build.maven("foo","bar","yo")}
+          script{build.Maven("foo","bar","yo")}
           sh 'env'
         }
       }
