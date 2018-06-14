@@ -16,8 +16,8 @@ pipeline {
     stage('Verify maven') {
       steps {
         container('maven') {
-          script{build.maven("foo","bar","yo")}
           sh 'mvn -version'
+          script{build.maven("foo","bar","yo")}
           sh 'env'
         }
       }
