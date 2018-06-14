@@ -1,5 +1,5 @@
 import com.acme.Build
-def build=Build(this)
+def build=new Build(this)
 pipeline {
   agent {
     kubernetes {
