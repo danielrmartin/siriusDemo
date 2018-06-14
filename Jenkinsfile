@@ -1,4 +1,5 @@
-import com.acme
+import com.acme.Build
+def build=Build(this)
 pipeline {
   agent {
     kubernetes {
