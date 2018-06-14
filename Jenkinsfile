@@ -1,3 +1,4 @@
+import com.acme
 pipeline {
   agent {
     kubernetes {
@@ -15,6 +16,7 @@ pipeline {
     stage('Verify maven') {
       steps {
         container('maven') {
+          script{build.maven("foo","bar","yo")}
           sh 'mvn -version'
           sh 'env'
         }
