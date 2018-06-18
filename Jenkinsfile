@@ -1,4 +1,5 @@
-@Library('build') import com.acme.Build
+@Library('Build') 
+import com.acme.Build
 def build=new Build(this)
 pipeline {
   agent {
@@ -17,7 +18,7 @@ pipeline {
     stage('Verify maven') {
       steps {
         container('maven') {
-          script{build.mvn("foo","bar","yo")}
+          script{build.mvn("foo")}
         }
       }
     }  
