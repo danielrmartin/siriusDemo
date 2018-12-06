@@ -12,7 +12,7 @@ pipeline {
     }
   }
   stages {
-    stage('Verify maven') {
+    stage('Build') {
       steps {
         container('maven') {
           script{
@@ -22,6 +22,8 @@ pipeline {
           sh 'mvn -version'
           sh 'env'
           sh "echo this is the url ${env.GIT_URL}"
+          writeFile file: "application.sh", text: "echo Built ${BUILD_ID} of ${JOB_NAME}"
+        archiveArtifacts artifacts: '*.sh', fingerprint: true
         }
       }
     }  
