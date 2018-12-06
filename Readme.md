@@ -10,9 +10,6 @@ more beer
 
 Maybe whiskey
 
-more beer
-
-
 Hello Casey
 
 Working on sunday
