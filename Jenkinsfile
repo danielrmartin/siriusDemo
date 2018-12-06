@@ -28,7 +28,7 @@ pipeline {
         }
       }
     }  
-     stage('Example Deploy') {
+     stage('Deploy') {
             steps {
               script{
                 if (env.BRANCH_NAME=="dev"){
