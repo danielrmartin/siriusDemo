@@ -1,6 +1,3 @@
-@Library('Build') 
-import com.acme.Build
-def build=new Build(this)
 pipeline {
   agent {
     kubernetes {
@@ -18,7 +15,7 @@ pipeline {
     stage('Verify maven') {
       steps {
         container('maven') {
-          script{build.mvn("foo")}
+         sh " echo maven"
         }
       }
     }  
