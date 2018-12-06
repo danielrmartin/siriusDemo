@@ -24,6 +24,7 @@ pipeline {
           sh "echo this is the url ${env.GIT_URL}"
           writeFile file: "application.sh", text: "echo Built ${BUILD_ID} of ${JOB_NAME}"
         archiveArtifacts artifacts: '*.sh', fingerprint: true
+          
         }
       }
     }  
