@@ -17,7 +17,3 @@ Working on sunday
 
 We have a web-hook
 
-Working with Lilly
-
-Almost ther
-
