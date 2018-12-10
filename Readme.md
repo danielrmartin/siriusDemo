@@ -17,3 +17,5 @@ Working on sunday
 
 We have a web-hook
 
+Commit from the CLI
+
