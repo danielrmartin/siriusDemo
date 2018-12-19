@@ -19,12 +19,9 @@ pipeline {
           final scmVars = checkout(scm)
             sh "echo scmVars: ${scmVars}"
           }
-          sh 'mvn -version'
-          sh 'env'
-          sh "echo this is the url ${env.GIT_URL}"
+          //sh 'mvn -version'
           writeFile file: "application.sh", text: "echo Built ${BUILD_ID} of ${JOB_NAME}"
-       // archiveArtifacts artifacts: '*.sh', fingerprint: true
-          gateProducesArtifact file: 'application.sh', label: "application.sh:${BUILD_ID}"
+          gateProducesArtifact file: 'application.sh', label: 'application.sh:${BUILD_ID}'
           
         }
       }
