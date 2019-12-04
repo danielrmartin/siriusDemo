@@ -47,7 +47,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying'
-              publishEvent simpleEvent('helloWorld')
+            //  publishEvent simpleEvent('helloWorld')
             }
     }
   }
